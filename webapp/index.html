@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/phonebook.css"/>
+    <title>Phone book</title>
+</head>
+
+<body>
+
+<div id="app" v-cloak class="content">
+    <div class="modal fade" tabindex="-1" id="warning" ref="warningWindow" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-start">
+                    <h5>{{warningText}}</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            data-bs-dismiss="modal"
+                            class="btn btn-outline-secondary btn-sm"
+                            @click="closeAndUpdate">Закрыть и обновить список контактов
+                    </button>
+                    <button type="button"
+                            data-bs-dismiss="modal"
+                            class="btn btn-outline-secondary btn-sm"
+                            @click="clearWarningText">Закрыть
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="modal" ref="modalWindow" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 v-if="contactsForRemove.length === 1" class="modal-title">Удалить контакт?</h5>
+                    <h5 v-else class="modal-title">Удаление</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-start">
+                    <div v-if="contactsForRemove.length === 1">{{contactToString(contactsForRemove[0])}}</div>
+                    <div v-else><b>Удалить отмеченные записи?</b></div>
+                </div>
+                <div class="modal-footer">
+                    <button @click="remove()" type="button" data-bs-dismiss="modal" class="btn btn-outline-danger">Да
+                    </button>
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-outline-secondary">Нет</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter-container">
+        <label class="mr-1">
+            Введите текст:
+            <input type="text" v-model="filterValue" class="form-control input-sm"/>
+        </label>
+        <button class="btn btn-primary" @click="filter()">Отфильтровать</button>
+        <button class="btn btn-primary" @click="resetFilter()">Сбросить фильтр</button>
+    </div>
+    <table class="table table-bordered contact-table">
+        <thead>
+        <tr>
+            <th>
+                <label class="select-all-label">
+                    <input type="checkbox"
+                           title="Выбрать"
+                           v-model="isAllChecked"
+                           class="form-check-input"
+                           @change="checkAllCheckboxes"/>
+                </label>
+            </th>
+            <th>№</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="row in rows">
+            <template v-if="row.shown">
+                <td>
+                    <label class="select-me-label">
+                        <input type="checkbox"
+                               class="select-me"
+                               v-model="row.checked"
+                        />
+                    </label>
+                </td>
+                <td v-text="row.number"></td>
+                <td v-text="row.lastName"></td>
+                <td v-text="row.firstName"></td>
+                <td v-text="row.phone"></td>
+                <td>
+                    <button type="button"
+                            class="btn btn-primary"
+                            @click="showRemovingDialog(row)">
+                        Удалить
+                    </button>
+                </td>
+            </template>
+        </tr>
+        </tbody>
+    </table>
+
+    <button type="button"
+            class="btn btn-primary"
+            @click="showRemovingDialog()">
+        Удалить выбранные
+    </button>
+    <br>
+
+    <div class="server-error-message-container">
+        <span v-show="serverValidation" v-text="serverError"></span>
+    </div>
+
+    <form class="form">
+        <div>
+            <label class="form-label">
+                <span class="form-field">Фамилия:</span>
+                <input type="text" class="form-control input-sm form-input ml-1"
+                       v-model="lastName"
+                       v-bind:class="{ 'input-error': lastNameError.error && validation }"/>
+                <span v-show="validation" class="error-message" v-text="lastNameError.message"></span>
+            </label>
+        </div>
+        <div>
+            <label class="form-label">
+                <span class="form-field">Имя:</span>
+                <input type="text" class="form-control input-sm form-input ml-1"
+                       v-model="firstName"
+                       v-bind:class="{ 'input-error': firstNameError.error && validation }"/>
+                <span v-show="validation" class="error-message" v-text="firstNameError.message"></span>
+            </label>
+        </div>
+        <div>
+            <label class="form-label">
+                <span class="form-field">Телефон:</span>
+                <input type="text" class="form-control input-sm form-input ml-1"
+                       v-model="phone"
+                       v-bind:class="{ 'input-error': phoneError.error && validation }"/>
+                <span v-show="validation" class="error-message" v-text="phoneError.message"></span>
+            </label>
+        </div>
+        <button type="button" class="btn btn-primary" @click="addContact">Добавить</button>
+    </form>
+</div>
+
+<script src="js/lib/jquery.js"></script>
+<script src="js/lib/bootstrap.bundle.js"></script>
+<script src="js/lib/vue.js"></script>
+<script src="js/phonebook.js"></script>
+</body>
+</html>

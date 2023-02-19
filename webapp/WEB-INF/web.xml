@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <servlet>
+        <servlet-name>GetAllContactsServlet</servlet-name>
+        <servlet-class>ru.academit.phonebook.servlet.GetAllContactsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllContactsServlet</servlet-name>
+        <url-pattern>/phonebook/contacts</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddContactServlet</servlet-name>
+        <servlet-class>ru.academit.phonebook.servlet.AddContactServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddContactServlet</servlet-name>
+        <url-pattern>/phonebook/contacts/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteContactsServlet</servlet-name>
+        <servlet-class>ru.academit.phonebook.servlet.DeleteContactsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteContactsServlet</servlet-name>
+        <url-pattern>/phonebook/contacts/delete</url-pattern>
+    </servlet-mapping>
+</web-app>
