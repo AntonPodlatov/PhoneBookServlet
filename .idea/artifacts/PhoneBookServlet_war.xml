@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="PhoneBookServlet:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>PhoneBookServlet</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="PhoneBookServlet.war">
+      <element id="artifact" artifact-name="PhoneBookServlet:war exploded" />
+    </root>
+  </artifact>
+</component>
