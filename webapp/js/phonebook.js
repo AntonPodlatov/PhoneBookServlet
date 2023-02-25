@@ -55,6 +55,8 @@ new Vue({
             var self = this;
             var contact = new Contact(this.firstName, this.lastName, this.phone);
 
+            console.log(contact);
+
             $.ajax({
                 type: "POST", url: "/phonebook/contacts/add", data: JSON.stringify(contact)
             }).done(function () {
@@ -183,7 +185,7 @@ new Vue({
             return !this.phone ? {
                 message: "Поле Телефон должно быть заполнено.",
                 error: true
-            } : this.contactAlreadyExists() ? {
+            } : this.contactAlreadyExists ? {
                 message: "Номер телефона не должен дублировать другие номера в телефонной книге.",
                 error: true
             } : {
