@@ -9,7 +9,7 @@
       </artifact>
     </deployment>
     <server-settings>
-      <option name="BASE_DIRECTORY_NAME" value="1b3b7500-3ad0-48e4-bf3e-03b0033efbe8" />
+      <option name="BASE_DIRECTORY_NAME" value="c442483f-d9a9-4cc0-b848-d58ea244ea95" />
     </server-settings>
     <predefined_log_file enabled="true" id="Tomcat" />
     <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -17,7 +17,7 @@
     <predefined_log_file id="Tomcat Host Manager" />
     <predefined_log_file id="Tomcat Localhost Access" />
     <RunnerSettings RunnerId="Debug">
-      <option name="DEBUG_PORT" value="61135" />
+      <option name="DEBUG_PORT" value="59728" />
     </RunnerSettings>
     <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
       <option name="USE_ENV_VARIABLES" value="true" />
@@ -82,6 +82,7 @@
     <method v="2">
       <option name="Make" enabled="true" />
       <option name="BuildArtifacts" enabled="true">
+        <artifact name="PhoneBookServlet:war" />
         <artifact name="PhoneBookServlet:war exploded" />
       </option>
     </method>

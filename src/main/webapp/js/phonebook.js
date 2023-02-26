@@ -55,8 +55,6 @@ new Vue({
             var self = this;
             var contact = new Contact(this.firstName, this.lastName, this.phone);
 
-            console.log(contact);
-
             $.ajax({
                 type: "POST", url: "/phonebook/contacts/add", data: JSON.stringify(contact)
             }).done(function () {
@@ -121,13 +119,10 @@ new Vue({
 
         showRemovingDialog(row = null) {
             if (row === null) {
-                var checkedRows = this.rows.filter(function (row) {
-                    return row.checked === true;
-                });
+                var checkedRows = this.rows.filter(row => row.checked === true);
 
                 if (checkedRows.length === 0) {
-                    this.warningText = "Не выбрано ни одного контакта"
-                    this.showWarning();
+                    this.showWarning("Не выбрано ни одного контакта");
                     return;
                 }
 
@@ -142,6 +137,7 @@ new Vue({
 
         showWarning(warningTest) {
             this.warningText = warningTest;
+            console.log(this.warningText)
             var warning = new bootstrap.Modal(this.$refs.warningWindow, {backdrop: true, keyboard: true, focus: true});
             warning.show();
         },
