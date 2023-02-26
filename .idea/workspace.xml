@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
+      <artifact name="PhoneBookServlet:war" />
       <artifact name="PhoneBookServlet:war exploded" />
     </artifacts-to-build>
   </component>
@@ -9,44 +10,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a23bd0c-eb5b-4979-86b6-0ddc466d491a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/PhoneBookServlet_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_servlet_jakarta_servlet_api_6_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_ws_rs_jakarta_ws_rs_api_3_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Tomcat_10_0_27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Tomcat_10_0_27.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBookServlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBookServlet.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/PhoneBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/PhoneBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/converter/ContactConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/converter/ContactConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/converter/ContactValidationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/converter/ContactValidationConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/converter/DeleteResponseConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/converter/DeleteResponseConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/dao/ContactsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/dao/ContactsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/model/Contact.java" afterDir="false" />
+    <list default="true" id="4a23bd0c-eb5b-4979-86b6-0ddc466d491a" name="Changes" comment="fixed project structure">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/PhoneBookServlet_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_servlet_jakarta_servlet_api_6_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_ws_rs_jakarta_ws_rs_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/service/ContactValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/service/ContactValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/service/ContactsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/service/ContactsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/service/DeleteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/service/DeleteResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/servlet/AddContactServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/servlet/AddContactServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/servlet/DeleteContactsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/servlet/DeleteContactsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/academit/phonebook/servlet/GetAllContactsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/academit/phonebook/servlet/GetAllContactsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/css/phonebook.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/phonebook.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/js/lib/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/lib/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/js/lib/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/lib/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/js/lib/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/lib/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/js/phonebook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/phonebook.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +40,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2MH3R0uait40sWfG00K5Kl3P4B5" />
   <component name="ProjectViewState">
@@ -116,10 +98,23 @@
       <option name="presentableId" value="Default" />
       <updated>1677410668390</updated>
       <workItem from="1677410670029" duration="3182000" />
+      <workItem from="1677413887983" duration="844000" />
     </task>
+    <task id="LOCAL-00001" summary="fixed project structure">
+      <created>1677414679489</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677414679489</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed project structure" />
   </component>
 </project>
